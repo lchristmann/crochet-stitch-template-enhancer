@@ -1,0 +1,6 @@
+.vscode
+.idea
+input/private/*
+!input/private/.gitkeep
+output/*
+!output/.gitkeep
