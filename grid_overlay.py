@@ -18,7 +18,7 @@ if len(sys.argv) == 3:
     output_file = sys.argv[2]
 else:
     base_name = os.path.splitext(os.path.basename(input_file))[0]
-    output_file = os.path.join("output", f"{base_name}.png")
+    output_file = os.path.join("/output", f"{base_name}.png")
 
 # -------------------------
 # Load image and preprocess
@@ -98,9 +98,6 @@ for x in ver_positions:
 
 # Composite overlay on original image
 result = Image.alpha_composite(pil_img.convert("RGBA"), overlay)
-
-# Make sure output folder exists
-os.makedirs(os.path.dirname(output_file), exist_ok=True)
 
 result.save(output_file)
 print(f"Enhanced grid saved to {output_file}")
