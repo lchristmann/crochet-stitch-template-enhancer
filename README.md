@@ -30,6 +30,7 @@ Run the Crochet Stitch Template Enhancer:
 ```bash
 # Automatic output filename (same name as input, saved as PNG)
 docker run --rm \
+  -u $(id -u):$(id -g) \
   -v $(pwd)/input:/input \
   -v $(pwd)/output:/output \
   crochet-stitch-template-enhancer \
@@ -39,6 +40,7 @@ docker run --rm \
 ```bash
 # Explicit output filename (optional)
 docker run --rm \
+  -u $(id -u):$(id -g) \
   -v $(pwd)/input:/input \
   -v $(pwd)/output:/output \
   crochet-stitch-template-enhancer \
